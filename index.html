@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Memuat Panel...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+  :root{
+  --bg1: #0a0a0a; 
+  --bg2: #151515; 
+  --primary: #00d4ff;
+  --primary-dark: #0099cc;
+  --primary-light: #33e0ff;
+  --text: #f0f0f0;
+  --text-muted: #a0a0a0;
+  --panel: rgba(25, 25, 35, 0.8);
+  --panel-border: rgba(255, 255, 255, 0.1);
+  --success: #00ff88;
+  --warning: #ffaa00;
+  --error: #ff4444;
+  --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --glass: rgba(40, 40, 50, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent-1: #ff6b6b;
+  --accent-2: #4ecdc4;
+  --accent-3: #45b7d1;
+  --accent-4: #96ce54;
+  --gradient-1: linear-gradient(135deg, #0066cc 0%, #00aaff 100%);
+  --gradient-2: linear-gradient(135deg, #ff3366 0%, #ff6699 100%);
+  --gradient-3: linear-gradient(135deg, #00cc88 0%, #00ffaa 100%);
+  --gradient-4: linear-gradient(135deg, #9966ff 0%, #cc99ff 100%);
+}
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://yamzz-official.vercel.app/20250927_182815.jpg');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      color: #ff0000;
+    }
+    h1 {
+      display: block;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      color: #ff0000;
+    }
+    .progress-container {
+      width: 80%;
+      max-width: 400px;
+      box-shadow: white;
+      border: 2px solid #ff0000;
+      background-color: #500000;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 25px;
+    }
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #ff0000;
+      transition: width 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selamat Datang Di Aplikasi Silent Death</h1>
+  <h2>Memuat Aplikasi, mohon tunggu...</h2>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    let width = 0;
+
+    const interval = setInterval(() => {
+      if (width >= 200) {
+        clearInterval(interval);
+        window.location.href = "http://panel.hostkita.xyz:2941/login";
+      } else {
+        width++;
+        progressBar.style.width = width + '%';
+      }
+    }, 50); // Total waktu: 100 * 30ms = 3000ms = 3 detik
+  </script>
+
+</body>
+</html>
